@@ -11,11 +11,11 @@ jobs:
     steps:
       - checkout
       - run: npm run lint
-  test:
+  tests:
     <<: *jobImageDefaults
     steps:
       - checkout
-      - run: npm run tet
+      - run: npm run test
   analyze:
     <<: *jobImageDefaults
     steps:
