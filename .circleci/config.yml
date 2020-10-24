@@ -10,6 +10,10 @@ jobs:
     <<: *jobImageDefaults
     steps:
       - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@5'
+       run: npm start
       - run: npm run lint
   tests:
     <<: *jobImageDefaults
