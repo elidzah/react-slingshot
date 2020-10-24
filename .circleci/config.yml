@@ -7,17 +7,17 @@ default: &jobImageDefaults
 
 jobs:
   build:
-    <<: jobImageDefaults
+    <<: *jobImageDefaults
     steps:
       - checkout
       - run: npm run lint
   test:
-    <<: jobImageDefaults
+    <<: *jobImageDefaults
     steps:
       - checkout
       - run: npm run tet
   analyze:
-    <<: jobImageDefaults
+    <<: *jobImageDefaults
     steps:
       - checkout
       - run: npm audit
@@ -29,7 +29,9 @@ workflows:
     jobs:
       - build
       - tests:
-          requires: build
+          requires: 
+          - build
       - analyze:
-          requires: tests
+          requires: 
+          - tests
 
