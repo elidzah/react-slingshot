@@ -3,7 +3,7 @@ version: 2.1
 # Use a package of configuration called an orb.
 default: &jobImageDefaults
   docker:
-  - image: cimg/base:2020.01
+  - image: circleci/node:13.8.0
 
 jobs:
   build:
@@ -29,9 +29,9 @@ workflows:
     jobs:
       - build
       - tests:
-          requires: 
+          requires:
           - build
       - analyze:
-          requires: 
+          requires:
           - tests
 
