@@ -3,7 +3,7 @@ version: 2.1
 # Use a package of configuration called an orb.
 default: &jobImageDefaults
   docker:
-  - image: circleci/node:13.0.8
+  - image: circleci/node:13.8.0
 
 jobs:
   build:
