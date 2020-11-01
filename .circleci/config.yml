@@ -33,7 +33,7 @@ workflows:
       - tests:
           requires:
           - build
-      - analyze:
-          requires:
-          - tests
+      # - analyze:
+      #     requires:
+      #     - tests
 
