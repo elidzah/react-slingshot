@@ -24,6 +24,7 @@ jobs:
       - checkout
       - run: npm audit
   print_var:
+    <<: *jobImageDefaults
     environment:
       CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<<pipeline.git.revision>>
     working_directory: ~/main
