@@ -26,10 +26,11 @@ jobs:
   print_var:
     <<: *jobImageDefaults
     environment:
-      CIRCLE_COMPARE_URL: $(echo "this is all I want")
+      CIRCLE_COMPARE_URL: "initiated"
     working_directory: ~/main
     steps:
       - run: echo "This is pipeline ID << pipeline.id >>"
+      - run: echo "changed" >> $CIRCLE_COMPARE_URL
       - run: echo $CIRCLE_COMPARE_URL
 # Orchestrate or schedule a set of jobs
 workflows:
