@@ -26,7 +26,7 @@ jobs:
   print_var:
     <<: *jobImageDefaults
     environment:
-      CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<<pipeline.git.revision>>
+      CIRCLE_COMPARE_URL: $(eval echo "this is all I want")
     working_directory: ~/main
     steps:
       - run: echo "This is pipeline ID << pipeline.id >>"
