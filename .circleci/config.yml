@@ -9,13 +9,23 @@ orbs:
 # See: https://circleci.com/docs/jobs-steps/#jobs-overview & https://circleci.com/docs/configuration-reference/#jobs
 jobs:
   build:
+    docker:
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - run:
           name: "linting"
           command: npm run lint
   test:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      run: echo "Hello world from test"
   analyze:
+    docker:
+      - image: circleci/node:13.8.0
+    Steps:
+      run: echo "Hello worl from analyzes"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
