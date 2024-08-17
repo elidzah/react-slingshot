@@ -21,11 +21,11 @@ jobs:
       - checkout
       - run: npm i
       - run: 
-        name: "testing with npm"
-        command: |
-          echo "executing forseen tests"
-          npm i
-          npm run test
+          name: "testing with npm"
+          command: |
+            echo "executing forseen tests"
+            npm i
+            npm run test
 
   analyze:
     docker:
