@@ -10,13 +10,17 @@ jobs:
       - checkout
       - run:
           name: "linting"
-          command: npm run lint
+          command: |
+            npm i
+            npm run lint
 
   test:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo "Hello world from test"
+      - checkout
+      - run: |
+        echo "Hello world from test"
 
   analyze:
     docker:
