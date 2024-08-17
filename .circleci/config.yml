@@ -19,13 +19,24 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: echo "Hello world from test"
+      - run: npm i
+      - run: 
+        name: "testing with npm"
+        command: |
+          echo "executing forseen tests"
+          npm i
+          npm run test
 
   analyze:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo "Hello worl from analyzes"
+      - run: 
+          name: "analyzing npm module" 
+          command: | 
+            echo "Verification before deploy"
+            npm i
+            npm audit
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
