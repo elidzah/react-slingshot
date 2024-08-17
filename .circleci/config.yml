@@ -34,8 +34,9 @@ jobs:
       - run: 
           name: "analyzing npm module" 
           command: | 
-            echo "Verification before deploy"
+            echo "Verification and fix before deploy"
             npm i
+            npm audit fix
             npm audit
 
 # Orchestrate jobs using workflows
